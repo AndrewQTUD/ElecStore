@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!--
+	ustora by freshdesignweb.com
+	Twitter: https://twitter.com/freshdesignweb
+	URL: https://www.freshdesignweb.com/ustora/
+-->
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Log in</title>
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet'
+        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> -->
+    <script>
+        $(document).on('click', 'input[type="checkbox"]', function () {
+            $('input[type="checkbox"]').not(this).prop('checked', false);
+        });
+        function login(event) {
+            var admin = document.getElementById("admin");
+            var customer = document.getElementById("customer");
+            if (admin.checked == true) {
+                alert("Hello Admin");
+            }
+            else if (customer.checked) {
+                alert("Hello customer");
+            }
+        }
+    </script>
+</head>
+
+<body ng-app="LoginApp" ng-controller="LoginController">
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="logo">
+                        <h1>E-Store</h1>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="shopping-item">
+                        <a href="cart.html">Cart - <span class="cart-amunt">$100</span> <i
+                                class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End site branding area -->
+
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <hr>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                        <li class="active"><a href="Login.html">Login</a></li>
+                        <li><a href="Signup.html">Signup</a></li>
+                    </ul>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div> <!-- End mainmenu area -->
+    <div class="">
+        <div class="container">
+            <input type="checkbox" id="admin" name="admin" value="admin">
+            <label for="admin">Admin Login</label><br>
+            <input type="checkbox" id="customer" name="customer" value="customer" checked>
+            <label for="customer">Customer Login</label><br>
+            <hr>
+            <form ng-submit="login()" id="login-form-wrap" method="post">
+
+                <p class="form-row form-row-first">
+                    <label for="username">Username or email <span class="required">*</span>
+                    </label>
+                    <input type="text" id="username" name="username" class="input-text" ng-model="username" required>
+                </p>
+                <p class="form-row form-row-last">
+                    <label for="password">Password <span class="required">*</span>
+                    </label>
+                    <input type="password" id="password" name="password" class="input-text" ng-model="password" required>
+                </p>
+                <div class="clear"></div>
+
+
+                <p class="form-row">
+                    <input type="submit" value="Login" name="login" class="button">
+                    <label class="inline" for="rememberme"><input type="checkbox" value="forever" id="rememberme"
+                            name="rememberme"> Remember me </label>
+                </p>
+                <p class="lost_password">
+                    <a href="#">Lost your password?</a>
+                </p>
+
+                <div class="clear"></div>
+            </form>
+        </div>
+
+    </div>
+    </div>
+
+
+    <div class="footer-top-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-about-us">
+                        <h2>E<span>Store</span></h2>
+                        <p>Electronic Store</p>
+                        <div class="footer-social">
+                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">User Navigation </h2>
+                        <ul>
+                            <li><a href="#">My account</a></li>
+                            <li><a href="#">Order history</a></li>
+                            <li><a href="#">Wishlist</a></li>
+                            <li><a href="#">Vendor contact</a></li>
+                            <li><a href="#">Front page</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-menu">
+                        <h2 class="footer-wid-title">Categories</h2>
+                        <ul>
+                            <li><a href="#">Mobile Phone</a></li>
+                            <li><a href="#">Home accesseries</a></li>
+                            <li><a href="#">LED TV</a></li>
+                            <li><a href="#">Computer</a></li>
+                            <li><a href="#">Gadets</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="footer-newsletter">
+                        <h2 class="footer-wid-title">Newsletter</h2>
+                        <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to
+                            your inbox!</p>
+                        <div class="newsletter-form">
+                            <form action="#">
+                                <input type="email" placeholder="Type your email">
+                                <input type="submit" value="Subscribe">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer top area -->
+    <script>
+
+
+        var planApp = angular.module("LoginApp", []);
+        planApp.controller("LoginController", function ($scope, $http) {
+            $scope.login = function () {
+                var admin = document.getElementById("admin");
+                var customer = document.getElementById("customer");
+                if (admin.checked == true) {
+                    alert("Welcome " + $scope.username + "\nRedirecting to Admin Menu!");
+                    window.location.href = "AdminMenu.html";
+                }
+                else if (customer.checked) {
+                    //alert("Hello customer");
+                    $http({
+                        method: "GET",
+                        url: "/api/Customers/"
+                    }).then(function mySuccess(response) {
+                        response.data.forEach(element => {
+                            if(element.username===$scope.username && element.password===$scope.password){
+                                window.location.href = "cart.html";
+                            }
+                        });
+                        //alert(JSON.stringify(response.data));
+                    }, function myError(response) {
+                        alert("Failed to load");
+                    });
+                }
+                // var tour = {
+                //     "title": $scope.TourTitle,
+                //     "description": $scope.TourDescription,
+                //     "date_from": $scope.tourDateFrom,
+                //     "date_to": $scope.tourDateTo,
+                //     "charges": $scope.chargesPerPerson,
+                //     "total_seats": $scope.seats,
+                //     "terms": $scope.terms,
+                // };
+                // // var promise = $http.post('/api/Tours/', tour);
+                // // promise.success = function (data, status, headers, config) {
+                // // 	//alert(JSON.stringify(data));
+                // // 	$scope.data = data;
+                // // 	//alert("Planned successfully!");
+                // // };
+                // // promise.error = function (data, status, headers, config) {
+                // // 	alert("ERROR occured while sending ajax request");
+                // // };
+
+                // var url = '/api/Tours/', data = tour, config = 'application/json';
+
+                // $http.post(url, data, config).then(function (response) {
+                //     //alert(JSON.stringify(response.data.Id));
+
+                //     //pickups
+                //     var pickups = {
+                //         "address": $scope.address,
+                //         "contact_no": $scope.contact_no,
+                //         //"boarding": $scope.boarding,
+                //         "departure": $scope.departure,
+                //         "tour_id": response.data.Id,
+                //     };
+                //     var url = '/api/PickPoints/', data = pickups, config = 'application/json';
+                //     $http.post(url, data, config).then(function (response) {
+                //         //alert(JSON.stringify(response));
+
+                //     }, function (response) {
+
+                //         //alert(JSON.stringify(response));
+                //     });
+
+                //     //destinations
+                //     var destinations = {
+                //         "name": $scope.destination,
+                //         "description": $scope.destinationDescription,
+                //         "tour_id": response.data.Id,
+                //     };
+                //     var url = '/api/Destinations/', data = destinations, config = 'application/json';
+                //     $http.post(url, data, config).then(function (response) {
+                //         //spots
+
+                //         var spots = {
+                //             "title": $scope.spot_title,
+                //             "description": $scope.spot_description,
+                //             "destination_id": response.data.Id,
+                //         };
+
+                //         var url = '/api/Spots/', data = spots, config = 'application/json';
+                //         $http.post(url, data, config).then(function (response) {
+                //             //alert("ye b theek hai");
+
+                //         }, function (response) {
+
+                //             //alert(JSON.stringify(response));
+                //         });
+
+                //         //activities
+                //         var activities = {
+                //             "title": $scope.activityTitle,
+                //             "description": $scope.activityDescription,
+                //             "destination_id": response.data.Id,
+                //         };
+                //         var url = '/api/Activities/', data = activities, config = 'application/json';
+                //         $http.post(url, data, config).then(function (response) {
+                //             alert(JSON.stringify(response));
+
+                //         }, function (response) {
+
+                //             //alert(JSON.stringify(response));
+                //         });
+                //         // var addActiv =function(){
+                //         // 	alert(JSON.stringify(response.data.Id));
+                //         // }
+
+                //     }, function (response) {
+
+                //         //alert(JSON.stringify(response));
+                //     });
+
+
+
+                // }, function (response) {
+
+                //     alert("Sorry for inconvinience!");
+
+                // });
+
+
+            }
+        });
+    </script>
+
+    <!-- Latest jQuery form server -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+
+    <!-- Bootstrap JS form CDN -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <!-- jQuery sticky menu -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+
+    <!-- jQuery easing -->
+    <script src="js/jquery.easing.1.3.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
